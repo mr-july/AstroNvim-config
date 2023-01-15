@@ -200,6 +200,9 @@ local config = {
   mappings = {
     -- first key is the mode
     n = {
+      ["<F7>"] = false,
+      ["<C-'>"] = false,
+      ["<F12>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
       -- second key is the lefthand side of the map
       -- mappings seen under group name "Buffer"
       ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
@@ -212,6 +215,8 @@ local config = {
     t = {
       -- setting a mapping to false will disable it
       -- ["<esc>"] = false,
+      ["<F7>"] = false,
+      ["<C-'>"] = false,
     },
   },
 
