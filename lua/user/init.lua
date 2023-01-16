@@ -200,8 +200,10 @@ local config = {
   mappings = {
     -- first key is the mode
     n = {
+      -- disable default mapping to toggle the terminal
       ["<F7>"] = false,
       ["<C-'>"] = false,
+      -- set custom key to toggle the terminal
       ["<F12>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
       -- second key is the lefthand side of the map
       -- mappings seen under group name "Buffer"
