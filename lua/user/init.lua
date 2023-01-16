@@ -1,6 +1,33 @@
 --              AstroNvim Configuration Table
 -- All configuration changes should go inside of the table below
 
+
+--- Displays the notification in the editor UI
+-- @tparam string str     the notification message
+local function ui_notify(str)
+  if vim.g.ui_notifications_enabled then astronvim.notify(str) end
+end
+
+--- Toggle custom keymap=""|"deru"
+function ToggleKeymap()
+  if vim.bo.keymap == "" then
+    vim.bo.keymap = "deru"
+  else
+    vim.bo.keymap = ""
+  end
+  ui_notify(string.format("keymap='%s'", vim.bo.keymap))
+end
+
+--- Create custom command to toggle the keymap
+vim.api.nvim_create_user_command(
+  'ToggleKeymap',
+  function()
+    ToggleKeymap()
+  end,
+  { desc = "Toggle the keymap (none/'deru')" }
+)
+
+
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
@@ -210,6 +237,7 @@ local config = {
       ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+      ["<leader>bk"] = { function() ToggleKeymap() end, desc = "Toggle the keymap (none/'deru')" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
