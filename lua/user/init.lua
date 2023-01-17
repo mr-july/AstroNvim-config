@@ -234,6 +234,7 @@ local config = {
       ["<F12>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
       -- second key is the lefthand side of the map
       -- mappings seen under group name "Buffer"
+      ["<leader>ba"] = { "ggVG", desc = "Select All" },
       ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
@@ -248,6 +249,9 @@ local config = {
       ["<F7>"] = false,
       ["<C-'>"] = false,
     },
+    v = {
+      ["<leader>y"] = { "\"+y", desc = "Yank to Clipboard" },
+    }
   },
 
   -- Configure plugins
