@@ -395,4 +395,12 @@ local config = {
   end,
 }
 
+
+-- Custom additions
+
+-- Abbreviations:
+-- replace the last search string occurrences by numbers 1, 2, 3...
+vim.cmd("cabbrev inc let @a=1 | %s##\\=''.(@a+setreg('a', @a + 1)).''#g")
+
+
 return config
