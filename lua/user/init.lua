@@ -73,7 +73,9 @@ local config = {
       number = true, -- sets vim.opt.number
       spell = false, -- sets vim.opt.spell
       signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-      wrap = false, -- sets vim.opt.wrap
+      wrap = true, -- sets vim.opt.wrap
+      title = true, -- allow setting the window title
+      titlestring = '%(%{expand("%:~:.:h")}%)/%t - AstroNvim', -- window title format
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -240,6 +242,7 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bk"] = { function() ToggleKeymap() end, desc = "Toggle the keymap (none/'deru')" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["<leader>E"] = { "<cmd>Neotree %:p:h<cr>", desc = "Explore relative to buf" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -398,5 +401,13 @@ local config = {
     -- }
   end,
 }
+
+
+-- Custom additions
+
+-- Abbreviations:
+-- replace the last search string occurrences by numbers 1, 2, 3...
+vim.cmd("cabbrev inc let @a=1 | %s##\\=''.(@a+setreg('a', @a + 1)).''#g")
+
 
 return config
