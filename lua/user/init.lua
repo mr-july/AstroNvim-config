@@ -74,6 +74,8 @@ local config = {
       spell = false, -- sets vim.opt.spell
       signcolumn = "auto", -- sets vim.opt.signcolumn to auto
       wrap = true, -- sets vim.opt.wrap
+      title = true, -- allow setting the window title
+      titlestring = '%(%{expand("%:~:.:h")}%)/%t - AstroNvim', -- window title format
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
