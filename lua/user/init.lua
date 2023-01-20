@@ -239,6 +239,7 @@ local config = {
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bk"] = { function() ToggleKeymap() end, desc = "Toggle the keymap (none/'deru')" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+      ["<leader>E"] = { "<cmd>Neotree %:p:h<cr>", desc = "Explore relative to buf" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
