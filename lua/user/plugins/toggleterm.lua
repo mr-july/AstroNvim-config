@@ -1,3 +1,8 @@
 return {
-  open_mapping = [[<F12>]],
+  {
+    "akinsho/toggleterm.nvim",
+    opts = {
+      open_mapping = [[<F12>]],
+    }
+  }
 }
